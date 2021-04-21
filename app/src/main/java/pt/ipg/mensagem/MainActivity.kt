@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         //passar entre atividades
         val intent = Intent(this,MostraMensagemActivity::class.java)
+        intent.putExtra("MENSAGEM",mensagem)
+
         startActivity(intent)
     }
 }
