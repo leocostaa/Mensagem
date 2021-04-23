@@ -8,10 +8,17 @@ import android.widget.EditText
 
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        public val INFO_EXTRA_MENSAGEM :String = "MENSAGEM"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+
 
     fun enviaMensagem(view: View) {
         //obeter a mensagem
@@ -20,8 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         //passar entre atividades
         val intent = Intent(this,MostraMensagemActivity::class.java)
-        intent.putExtra("MENSAGEM",mensagem)
-
+        intent.putExtra(INFO_EXTRA_MENSAGEM,mensagem)
         startActivity(intent)
     }
 }

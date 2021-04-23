@@ -18,7 +18,8 @@
         android:layout_weight="1"
         android:ems="10"
         android:hint="@string/mensagem"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/buttonEnviar"
