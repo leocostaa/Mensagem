@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         public val INFO_EXTRA_MENSAGEM :String = "MENSAGEM"
+       // public val INFO_EXTRA_DATA  = "DATA"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,20 +21,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-
-
     fun enviaMensagem(view: View) {
         //obeter a mensagem
         val editTextMensagem = findViewById<EditText>(R.id.editTextMensagem)
         val mensagem = editTextMensagem.text.toString()
+        //val data = Date()
 
         if(mensagem.isBlank()){
             editTextMensagem.error = getString(R.string.mensagem_vazia)
             return
         }
+
         //passar entre atividades
         val intent = Intent(this,MostraMensagemActivity::class.java)
         intent.putExtra(INFO_EXTRA_MENSAGEM,mensagem)
+       // intent.putExtra(INFO_EXTRA_MENSAGEM,data)
+
         startActivity(intent)
     }
 }

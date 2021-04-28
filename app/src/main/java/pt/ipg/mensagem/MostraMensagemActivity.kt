@@ -11,11 +11,15 @@ class MostraMensagemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostra_mensagem)
 
-        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
         val Data = sdf.format(Date())
         val textViewData = findViewById<TextView>(R.id.textViewData)
         textViewData.setText(Data)
 
+        /*val data = intent.getSerializableExtra(MainActivity.INFO_EXTRA_DATA) as Date
+        val textViewData = findViewById<TextView>(R.id.textViewData)
+        textViewData.setText(data.toString())
+        */
         val mensagem = intent.getStringExtra(MainActivity.INFO_EXTRA_MENSAGEM)
         val textViewMensagem = findViewById<TextView>(R.id.textViewMensagem)
         textViewMensagem.setText(mensagem)
